@@ -1,4 +1,3 @@
-FROM rdohna/wildfly
+FROM rdohna/wildfly:27.0-jdk17-graphql
 
-COPY pong ${JBOSS_HOME}/standalone/configuration/files/pong
-COPY target/ping.war ${JBOSS_HOME}/standalone/deployments/ROOT.war
+COPY target/ROOT.war ${JBOSS_HOME}/standalone/deployments/ROOT.war

@@ -1,0 +1,15 @@
+"Query root"
+type Query {
+  _service: _Service!
+  ping: String
+}
+
+type _Service {
+  sdl: String!
+}
+
+"Scalar for BigDecimal"
+scalar BigDecimal
+
+"Scalar for BigInteger"
+scalar BigInteger
