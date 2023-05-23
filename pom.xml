@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <name>graphql-ping</name>
     <packaging>war</packaging>
+    <description>Minimal MP GraphQL app</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

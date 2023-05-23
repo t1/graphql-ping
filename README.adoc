@@ -1,0 +1,3 @@
+= GraphQL Ping
+
+Minimal MP GraphQL app for my own use.
