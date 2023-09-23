@@ -1,3 +1,3 @@
-= GraphQL Ping
+= GraphQL Ping image:https://github.com/t1/graphql-ping/actions/workflows/maven.yml/badge.svg[link=https://github.com/t1/graphql-ping/actions/workflows/maven.yml]
 
 Minimal MP GraphQL app for my own use.
