@@ -19,7 +19,7 @@
 
         <wildfly.version>29.0.1.Final</wildfly.version>
         <graphql.featurepack.version>2.5.0.Final</graphql.featurepack.version>
-        <smallrye-graphql.version>2.7.0</smallrye-graphql.version>
+        <smallrye-graphql.version>2.7.1</smallrye-graphql.version>
 
         <junit.version>5.10.1</junit.version>
     </properties>
