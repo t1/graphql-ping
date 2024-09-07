@@ -14,7 +14,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 @Testcontainers
 class PingIT {
     @Container static JeeContainer CONTAINER = WildflyContainer
-        .create("rdohna/wildfly", "26.1-jdk11-graphql")
+        .create("rdohna/wildfly", "latest")
         .withDeployment("target/ROOT.war");
 
     @GraphQLClientApi
