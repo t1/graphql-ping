@@ -13,12 +13,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>11</maven.compiler.target>
-        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.parameters>true</maven.compiler.parameters>
 
-        <wildfly.version>29.0.1.Final</wildfly.version>
-        <graphql.featurepack.version>2.5.0.Final</graphql.featurepack.version>
         <smallrye-graphql.version>2.11.0</smallrye-graphql.version>
 
         <junit.version>5.11.3</junit.version>
@@ -123,19 +121,39 @@
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <version>5.0.1.Final</version>
                 <configuration>
-                    <feature-packs>
-                        <feature-pack>
-                            <location>wildfly@maven(org.jboss.universe:community-universe):current#${wildfly.version}</location>
-                        </feature-pack>
-                        <feature-pack>
-                            <location>org.wildfly.extras.graphql:wildfly-microprofile-graphql-feature-pack:${graphql.featurepack.version}</location>
-                        </feature-pack>
-                    </feature-packs>
-                    <layers>
-                        <layer>cloud-server</layer>
-                        <layer>microprofile-graphql</layer>
-                    </layers>
+                    <discover-provisioning-info>
+                        <suggest>true</suggest>
+                        <addOns>wildfly-cli</addOns>
+                        <verbose>true</verbose>
+                    </discover-provisioning-info>
+                    <debug>true</debug>
+                    <bootable-jar>true</bootable-jar>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>provision</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>package</goal>
+                            <goal>image</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>start</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>start</goal>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>stop</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>shutdown</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
