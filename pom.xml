@@ -16,7 +16,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <maven.compiler.source>21</maven.compiler.source>
 
-        <smallrye-graphql.version>2.18.2</smallrye-graphql.version>
+        <smallrye-graphql.version>2.18.3</smallrye-graphql.version>
 
         <junit.version>6.1.1</junit.version>
         <lombok.version>1.18.46</lombok.version>
